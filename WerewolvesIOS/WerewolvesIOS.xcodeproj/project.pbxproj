@@ -76,6 +76,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3651D29D2899B97A00D3A96A /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		3651D29E2899BB7E00D3A96A /* Conectivity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Conectivity;
+			sourceTree = "<group>";
+		};
+		3651D29F2899BBA000D3A96A /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3651D2A02899BFD000D3A96A /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3651D2A02899BFD000D3A96A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		36D9B2A72899973D00E370A0 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +128,16 @@
 		36D9B2B22899973D00E370A0 /* WerewolvesIOS */ = {
 			isa = PBXGroup;
 			children = (
+				36D9B2C12899973E00E370A0 /* Info.plist */,
 				36D9B2B32899973D00E370A0 /* AppDelegate.swift */,
 				36D9B2B52899973D00E370A0 /* SceneDelegate.swift */,
 				36D9B2B72899973D00E370A0 /* ViewController.swift */,
-				36D9B2B92899973D00E370A0 /* Main.storyboard */,
 				36D9B2BC2899973E00E370A0 /* Assets.xcassets */,
+				3651D29D2899B97A00D3A96A /* Commons */,
+				3651D29E2899BB7E00D3A96A /* Conectivity */,
 				36D9B2BE2899973E00E370A0 /* LaunchScreen.storyboard */,
-				36D9B2C12899973E00E370A0 /* Info.plist */,
+				36D9B2B92899973D00E370A0 /* Main.storyboard */,
+				3651D29F2899BBA000D3A96A /* Modules */,
 			);
 			path = WerewolvesIOS;
 			sourceTree = "<group>";
