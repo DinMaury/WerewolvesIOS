@@ -1,14 +1,9 @@
-//
-//  UITextField+Extension.swift
-//  Werewolves
-//
-//  Created by Maury on 9/08/22.
-//
-
 import UIKit
 
 extension UITextField {
+    
     func togglePasswordVisibility() {
+        
         isSecureTextEntry = !isSecureTextEntry
         if let existingText = text, isSecureTextEntry {
             /* When toggling to secure text, all text will be purged if the user

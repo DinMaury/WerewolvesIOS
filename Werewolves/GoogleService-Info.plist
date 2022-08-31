@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>382794367055-uc7tckm9dvocnjn2rvori6kb2vbf3pcr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.382794367055-uc7tckm9dvocnjn2rvori6kb2vbf3pcr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDiCW2A11V4JwfMxAKdEf1bfbDSkRJPDvQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>382794367055</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>co.com.Din.Werewolves</string>
+	<key>PROJECT_ID</key>
+	<string>lobo-43632</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lobo-43632.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:382794367055:ios:9eb18b89f21b10706e6a3a</string>
+</dict>
+</plist>

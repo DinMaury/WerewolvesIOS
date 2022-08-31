@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = (scene as? UIWindowScene) else { return }
         
-        let module = HomeModule()
+        let module = LoginModule()
         let viewController = module.showLogin()
         let navigationController = UINavigationController(rootViewController: viewController)
         

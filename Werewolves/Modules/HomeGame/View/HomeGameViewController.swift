@@ -1,30 +1,23 @@
-//
-//  HomeGameViewController.swift
-//  Werewolves
-//
-//  Created by Maury on 10/08/22.
-//
-
 import UIKit
 
 class HomeGameViewController: UIViewController {
 
-    @IBOutlet weak var signOffButton: ButtonCircularBorders!
+    @IBOutlet weak var signOffButton: UIButton!
     
     //MARK: - Properties
-//    private var presenter: HomePresenterProtocol
-//
+    private var presenter: HomeGamePresenterProtocol
+    
 //    //MARK: - Inits
-//    init(_ presenter: HomePresenterProtocol) {
-//
-//        self.presenter = presenter
-//
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    init(_ presenter: HomeGamePresenterProtocol) {
+
+        self.presenter = presenter
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,4 +42,10 @@ class HomeGameViewController: UIViewController {
 //            // Se ha producido un error
 //        }
 //    }
+}
+
+extension HomeGameViewController {
+    func show(in navigationController: UINavigationController) {
+        presenter.show(in: navigationController)
+    }
 }
