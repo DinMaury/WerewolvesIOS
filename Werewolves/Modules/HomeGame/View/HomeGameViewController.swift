@@ -61,8 +61,6 @@ class HomeGameViewController: UIViewController {
     }
 }
 
-
-
 extension HomeGameViewController: HomeGamePresenterDelegate {
     func show(in navigationController: UINavigationController) {
         presenter.show(in: navigationController)
@@ -71,10 +69,6 @@ extension HomeGameViewController: HomeGamePresenterDelegate {
     func setupView() {
         
         view.backgroundColor = Colors.baseBackgroundColor.uiColor
-    }
-    
-    func fetchUser(user: User) {
-        
     }
     
     func missingUser () {
@@ -100,7 +94,6 @@ extension HomeGameViewController: HomeGamePresenterDelegate {
             alertController.addAction(UIAlertAction(title: "Aceptar", style: .default))
             
             self.present(alertController, animated: true, completion: nil)
-            self.missingUser()
         }
         
     }

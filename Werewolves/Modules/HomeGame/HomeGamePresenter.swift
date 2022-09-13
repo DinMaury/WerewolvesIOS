@@ -16,7 +16,6 @@ protocol HomeGamePresenterProtocol {
 //MARK: - Delegates
 protocol HomeGamePresenterDelegate: AnyObject {
     
-    func fetchUser(user: User)
     func missingUser()
     func errorToName(title: String, errorString: String)
     func presenterUserName(title: String, message: String)
@@ -54,7 +53,6 @@ extension HomeGamePresenter: HomeGamePresenterProtocol {
         }
     }
     
-    
     func show(in navigationController: UINavigationController) {
         router.show(presenter: self, in: navigationController)
         
@@ -67,7 +65,6 @@ extension HomeGamePresenter: HomeGamePresenterProtocol {
     func fetchUser() {
         interactor.fetchUser { [weak self] user in
             
-            self?.delegate?.fetchUser(user: user)
             self?.delegate?.presenterUserName(title: "Welcome", message: user.name)
             
         } onError: { [weak self] error in
@@ -78,8 +75,7 @@ extension HomeGamePresenter: HomeGamePresenterProtocol {
                 self?.delegate?.missingUser()
                 
             default:
-                //self?.delegate?.errorToName(title: LanguageString.errorTitle.localized, errorString: LanguageString.registerNameModalDescription.localized)
-                self?.delegate?.missingUser()
+                self?.delegate?.errorToName(title: LanguageString.errorTitle.localized, errorString: LanguageString.registerNameModalDescription.localized)
                 break
             }
         }
@@ -89,6 +85,7 @@ extension HomeGamePresenter: HomeGamePresenterProtocol {
         Task {
             do {
                 try await LoginService.shared.registerUser(name: name)
+                self.delegate?.presenterUserName(title: "Welcome", message: name)
             } catch {
                 print(error)
             }
