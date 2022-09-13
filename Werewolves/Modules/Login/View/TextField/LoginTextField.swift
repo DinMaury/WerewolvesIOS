@@ -15,7 +15,12 @@ extension LoginTextField {
         
         self.borderStyle = .roundedRect
         self.textColor = Colors.baseTitle1ForegroundColor.uiColor
-        layer.cornerRadius = self.frame.height / 3
+        self.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: Constants.regularHeight)
+        ])
+        
+        layer.cornerRadius = Constants.regularCornerRadius
         clipsToBounds = true
         self.backgroundColor = Colors.baseTextViewBackgroundColor.uiColor
     }

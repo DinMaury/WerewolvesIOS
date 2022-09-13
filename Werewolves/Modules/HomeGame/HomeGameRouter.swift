@@ -18,6 +18,7 @@ extension HomeGameRouter: HomeGameRouterProtocol {
     
     func show(presenter: HomeGamePresenterProtocol, in navigationController: UINavigationController) {
         
+        
         let viewController = HomeGameViewController(presenter)
         navigationController.pushViewController(viewController, animated: true)
         self.viewController = viewController

@@ -9,6 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeGameViewController" customModule="Werewolves" customModuleProvider="target">
             <connections>
+                <outlet property="aboutTheGameButton" destination="DaH-rq-wkU" id="yvi-om-Syc"/>
+                <outlet property="createRoomButton" destination="clL-cX-x41" id="F4S-gc-gfE"/>
+                <outlet property="joinRoomButton" destination="UQn-eA-AkU" id="lwt-kb-4uF"/>
+                <outlet property="signOffButton" destination="3Sk-6v-5Oo" id="Aqs-hn-u4k"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,22 +22,30 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gPm-7o-8xh">
-                    <rect key="frame" x="173.5" y="396.5" width="67" height="113"/>
+                    <rect key="frame" x="173.5" y="376" width="67" height="154"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clL-cX-x41">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clL-cX-x41" customClass="RegularButton" customModule="Werewolves" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaH-rq-wkU">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQn-eA-AkU" customClass="RegularButton" customModule="Werewolves" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="41" width="67" height="31"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sk-6v-5Oo">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaH-rq-wkU" customClass="RegularButton" customModule="Werewolves" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="82" width="67" height="31"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sk-6v-5Oo" customClass="RegularButton" customModule="Werewolves" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="123" width="67" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            <connections>
+                                <action selector="signOffButtonAction:" destination="-1" eventType="touchUpInside" id="8bz-wd-T1y"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

@@ -1,8 +1,32 @@
 import UIKit
+import ResourcesFramework
+import ConnectivityFramework
 
 class HomeGameViewController: UIViewController {
 
-    @IBOutlet weak var signOffButton: UIButton!
+    @IBOutlet weak var createRoomButton: RegularButton! {
+        didSet {
+            createRoomButton.setTitle(LanguageString.createARoom.localized, for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var joinRoomButton: RegularButton! {
+        didSet {
+            joinRoomButton.setTitle(LanguageString.joinARoom.localized, for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var aboutTheGameButton: RegularButton! {
+        didSet {
+            aboutTheGameButton.setTitle("About This Game", for: .normal)
+        }
+    }
+    
+    @IBOutlet weak var signOffButton: RegularButton! {
+        didSet {
+            signOffButton.setTitle(LanguageString.logout.localized, for: .normal)
+        }
+    }
     
     //MARK: - Properties
     private var presenter: HomeGamePresenterProtocol
@@ -21,8 +45,10 @@ class HomeGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        presenter.delegate = self
+        setupView()
+        presenter.fetchUser()
+        
     }
     @IBAction func signOffButtonAction(_ sender: Any) {
         
@@ -30,22 +56,61 @@ class HomeGameViewController: UIViewController {
         defaults.removeObject(forKey: "email")
         defaults.removeObject(forKey: "provider")
         defaults.synchronize()
-        //presenter.logOut()
+        presenter.logOut()
         
     }
-    // For presenter
-//    private func firebaseLogOut() {
-//
-//        do {
-//            try Auth.auth().signOut()
-//        } catch {
-//            // Se ha producido un error
-//        }
-//    }
 }
 
-extension HomeGameViewController {
+
+
+extension HomeGameViewController: HomeGamePresenterDelegate {
     func show(in navigationController: UINavigationController) {
         presenter.show(in: navigationController)
+    }
+    
+    func setupView() {
+        
+        view.backgroundColor = Colors.baseBackgroundColor.uiColor
+    }
+    
+    func fetchUser(user: User) {
+        
+    }
+    
+    func missingUser () {
+        DispatchQueue.main.async {
+            
+            let alert = UIAlertController(title: "Missing Name", message: "Insert Name for game", preferredStyle: .alert)
+                    alert.addTextField { (textField) in
+                        textField.placeholder = "Insert Name..."
+                    }
+
+                    alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { [weak alert] _ in
+                        guard let textField = alert?.textFields?[0], let name = textField.text else { return }
+                        self.presenter.setName(name)
+                    }))
+
+                    self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func errorToName(title: String, errorString: String) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title, message: errorString, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Aceptar", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
+            self.missingUser()
+        }
+        
+    }
+    
+    func presenterUserName(title: String, message: String) {
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Aceptar", style: .default))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }

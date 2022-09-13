@@ -10,7 +10,11 @@ extension RegularButton {
     
     func setupView() {
         
-        self.layer.cornerRadius = self.frame.height / 2
+        self.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: Constants.regularHeight)
+        ])
+        self.layer.cornerRadius = Constants.regularCornerRadius
         self.backgroundColor = Colors.submitButtonBackgroundColor.uiColor
         self.tintColor = Colors.submitButtonForegroundColor.uiColor
     }

@@ -77,29 +77,33 @@ extension LoginPresenter: LoginPresenterProtocol {
             return
         }
         delegate?.showLoading()
-        interactor.login(email: email, password: password) { status in
+
+        interactor.login(email: email, password: password) { [weak self] in
             
+            self?.router.showGame()
+            self?.delegate?.hideLoading()
         } onError: { [weak self] error in
-                
+            
+            self?.delegate?.hideLoading()
+            
                 switch error {
-                                        
+                    
                 case .emailAlreadyInUse:
                     self?.delegate?.errorToLogin(title: LanguageString.errorTitle.localized, errorString: LanguageString.errorTitle.localized)
-                    
+
                 case .invalidEmail:
                     self?.delegate?.errorToLogin(title: LanguageString.errorTitle.localized, errorString: LanguageString.errorInvalidEmailDescription.localized)
-                    
+
                 case .weakPassword:
                     self?.delegate?.errorToLogin(title: LanguageString.errorTitle.localized, errorString: LanguageString.errorWeakPasswordDrescription.localized)
-                    
+
                 case .wrongPassword:
                     self?.delegate?.errorToLogin(title: LanguageString.errorTitle.localized, errorString: LanguageString.errorWrongPasswordDescription.localized)
-                    
+
                 default:
                     self?.delegate?.errorToLogin(title: LanguageString.errorTitle.localized, errorString: LanguageString.errorUnknownTitleDescription.localized)
                 }
         }
-        router.showGame()
     }
 }
 

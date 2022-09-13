@@ -13,6 +13,7 @@ final class LoginViewController: UIViewController {
     }
     @IBOutlet weak var emailTextField: LoginTextField! {
         didSet {
+            
             emailTextField.delegate = self
             emailTextField.addLeftImageTo(img: Images.email.uiImage)
             emailTextField.textContentType = .emailAddress
@@ -73,6 +74,8 @@ final class LoginViewController: UIViewController {
         }
     }
     
+    private var loadingView: UILoadingView?
+    
     //MARK: - Properties
     private var presenter: LoginPresenterProtocol
     
@@ -106,22 +109,30 @@ final class LoginViewController: UIViewController {
         presenter.login()
     }
     @IBAction func googleTapped(_ sender: Any) {
-        
+        // Login Google
     }
     
     @IBAction func facebookTapped(_ sender: Any) {
-        
+        // Login Facebook
     }
 }
 
 //MARK: - LoginPresenterDelegate
 extension LoginViewController: LoginPresenterDelegate {
+    
+    
     func showLoading() {
         
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.loadingView = UILoadingView.show(in: self.view)
+        }
     }
     
     func hideLoading() {
-        
+        DispatchQueue.main.async { [weak self] in
+            self?.loadingView?.remove()
+        }
     }
     
     func setupView() {

@@ -33,11 +33,12 @@ extension LoginRouter: LoginRouterProtocol {
     }
     
     func showGame(){
-        
-        guard let navigationController = viewController?.navigationController else { return }
-        
-        let module = HomeGameModule()
-        //navigationController.pushViewController(HomeGameViewController(), animated: false)
-        module.show(in: navigationController)
+        DispatchQueue.main.async {
+            guard let navigationController = self.viewController?.navigationController else { return }
+            
+            let module = HomeGameModule()
+            //navigationController.pushViewController(HomeGameViewController(), animated: false)
+            module.show(in: navigationController)
+        }
     }
 }

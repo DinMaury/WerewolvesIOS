@@ -11,6 +11,7 @@
 		3645EBAA28BE771900D51520 /* HomeGameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3645EBA928BE771900D51520 /* HomeGameRouter.swift */; };
 		3645EBAC28BE772E00D51520 /* HomeGameModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3645EBAB28BE772E00D51520 /* HomeGameModule.swift */; };
 		3645EBAE28BE773A00D51520 /* HomeGameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3645EBAD28BE773A00D51520 /* HomeGameInteractor.swift */; };
+		3645EBB128D1263200D51520 /* ConnectivityFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 3645EBB028D1263200D51520 /* ConnectivityFramework */; };
 		3651D2AE28A1556500D3A96A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3651D2AD28A1556500D3A96A /* AppDelegate.swift */; };
 		3651D2B028A1556500D3A96A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3651D2AF28A1556500D3A96A /* SceneDelegate.swift */; };
 		3651D2BA28A1556700D3A96A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3651D2B828A1556700D3A96A /* LaunchScreen.storyboard */; };
@@ -32,7 +33,6 @@
 		3656A5CE28B6C30000E1B8F3 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3656A5CD28B6C30000E1B8F3 /* LoginTextField.swift */; };
 		3656A5D328B6C82700E1B8F3 /* RegularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3656A5D228B6C82700E1B8F3 /* RegularButton.swift */; };
 		36599C6F28B3D4EB00F76389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36599C6E28B3D4EB00F76389 /* Assets.xcassets */; };
-		36B5981D28B3DBBA00CFDE06 /* ConnectivityFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 36B5981C28B3DBBA00CFDE06 /* ConnectivityFramework */; };
 		36B5982028B3DC8200CFDE06 /* ResourcesFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 36B5981F28B3DC8200CFDE06 /* ResourcesFramework */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36B5981D28B3DBBA00CFDE06 /* ConnectivityFramework in Frameworks */,
+				3645EBB128D1263200D51520 /* ConnectivityFramework in Frameworks */,
 				36B5982028B3DC8200CFDE06 /* ResourcesFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,8 +269,8 @@
 			);
 			name = Werewolves;
 			packageProductDependencies = (
-				36B5981C28B3DBBA00CFDE06 /* ConnectivityFramework */,
 				36B5981F28B3DC8200CFDE06 /* ResourcesFramework */,
+				3645EBB028D1263200D51520 /* ConnectivityFramework */,
 			);
 			productName = Werewolves;
 			productReference = 3651D2AA28A1556500D3A96A /* Werewolves.app */;
@@ -346,8 +346,8 @@
 			);
 			mainGroup = 3651D2A128A1556500D3A96A;
 			packageReferences = (
-				36B5981B28B3DBBA00CFDE06 /* XCRemoteSwiftPackageReference "LoboConnectivity-iOS" */,
 				36B5981E28B3DC8200CFDE06 /* XCRemoteSwiftPackageReference "ResourcesFrameworkLobo-iOS" */,
+				3645EBAF28D1263200D51520 /* XCRemoteSwiftPackageReference "LoboConnectivity-iOS" */,
 			);
 			productRefGroup = 3651D2AB28A1556500D3A96A /* Products */;
 			projectDirPath = "";
@@ -757,12 +757,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		36B5981B28B3DBBA00CFDE06 /* XCRemoteSwiftPackageReference "LoboConnectivity-iOS" */ = {
+		3645EBAF28D1263200D51520 /* XCRemoteSwiftPackageReference "LoboConnectivity-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jparias20/LoboConnectivity-iOS";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.0;
+				minimumVersion = 4.0.0;
 			};
 		};
 		36B5981E28B3DC8200CFDE06 /* XCRemoteSwiftPackageReference "ResourcesFrameworkLobo-iOS" */ = {
@@ -776,9 +776,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		36B5981C28B3DBBA00CFDE06 /* ConnectivityFramework */ = {
+		3645EBB028D1263200D51520 /* ConnectivityFramework */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 36B5981B28B3DBBA00CFDE06 /* XCRemoteSwiftPackageReference "LoboConnectivity-iOS" */;
+			package = 3645EBAF28D1263200D51520 /* XCRemoteSwiftPackageReference "LoboConnectivity-iOS" */;
 			productName = ConnectivityFramework;
 		};
 		36B5981F28B3DC8200CFDE06 /* ResourcesFramework */ = {
